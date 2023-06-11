@@ -27,6 +27,7 @@ print("The Z-score are:", zscore)
 data=np.array(age)
 sd=np.std(data)
 print(sd)
+
 #to show the histogram
 plt.hist(age, bins='auto')
 plt.show()
