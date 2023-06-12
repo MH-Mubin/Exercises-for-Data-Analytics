@@ -18,8 +18,8 @@ conn = psycopg2.connect(database="project_name",
 #read csv dataset
 data=pd.read_csv('usa_county_wise.csv')
 rows=data.shape[0]
-
 cur=conn.cursor()
+
 # inserting csv data to postgres database
 cur.execute('create table usa_death(id SERIAL PRIMARY KEY,province_state varchar(20),country_region varchar(10),lat float,lon float,date date,confirmed int,deaths  int);')
 for i in range(0,rows):
@@ -74,6 +74,7 @@ msg['Subject'] = subject
 
 # attaching the body and figure in the mail
 msg.attach(MIMEText(message, 'plain'))
+
 #Setup the MIME
 with open('fig.png', 'rb') as file:
     image = MIMEImage(file.read(), name='fig.png')
