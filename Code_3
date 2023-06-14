@@ -61,7 +61,6 @@ subject = "Histogram Report " + str(today)
 message = '''Dear sir,
 Please Check the attached file.
 
-
 Regards,
 Mahmud Hasan Mubin
 Intern,
@@ -79,6 +78,7 @@ msg.attach(MIMEText(message, 'plain'))
 with open('fig.png', 'rb') as file:
     image = MIMEImage(file.read(), name='fig.png')
     msg.attach(image)
+
 # Connect to the SMTP server and send the email
 with smtplib.SMTP(host='smtp.gmail.com', port=587) as server:
     server.starttls()
